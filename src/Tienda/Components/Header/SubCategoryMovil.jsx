@@ -22,7 +22,7 @@ export const SubCategoryMovil = (props) => {
             </li>
           ))}
         </ul>
-        <p className="text-dark px-6 my-2">Usuarios</p>
+        <p className="text-dark px-6 my-2">Usuario</p>
         <a className="px-4 py-2 text-sm d-flex align-items-center text-dark lista-menu ">
           <span className="d-flex justify-content-center w-9">
             <i className="fas fa-user"></i>

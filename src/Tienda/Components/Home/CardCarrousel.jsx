@@ -1,8 +1,8 @@
 import Carousel from "react-bootstrap/Carousel";
 import "../../../assets/Home.css";
 
-export const Banners = () => {
-  return (
+export const CardCarrousel = () => {
+  return ( 
     <Carousel className="carrouselPrin">
       <Carousel.Item>        
         <img src="https://www.lacuracao.pe/cyberdays/assets/img/slider/tv/lc-200722-sliders-03-01.jpg" className="w-100 image_full" alt="First slide"/>

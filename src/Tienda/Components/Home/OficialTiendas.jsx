@@ -1,40 +1,128 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
-export const OficialTiendas = () => {
-    return (
-        <Container>
-            <Row className="mt-5">
-                <h3 className="mb-4">TIENDAS OFICIALES </h3>
-                <Col lg={3}>
-                    <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/21ff359b07112__sis_ts_redragon.jpg" alt="" />
-                </Col>
-                <Col lg={3}>
-                    <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/fc3a5e405c96__sis_ts_samsung-1.jpg" alt="" />
-                </Col>
-                <Col lg={3}>
-                    <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/195a9e447ac91__sis_ts_huawei2-1.jpg" alt="" />
-                </Col>
-                <Col lg={3}>
-                    <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/50b4cf2e004a__desktop_sis_sony-audio.jpg" alt="" />
-                </Col>
-            </Row>
-            <Row className="mt-5">
-                <h3 className="mb-3">NOVEDADES</h3>
+import Slider from "react-slick";
 
-                <Col lg={3}>
-                    <img src="https://i.linio.com/cms/67c75870-ffa1-11ec-9cfd-c2533916a67f.webp" alt="" className="w-100" />
-                </Col>
-                <Col lg={3}>
-                    <img src="https://i.linio.com/cms/e3ebc610-ff43-11ec-94bf-56ba5f1eb965.webp" alt="" className="w-100" />
-                </Col>
-                <Col lg={3}>
-                    <img src="https://i.linio.com/cms/83bbd4de-fee3-11ec-b350-56ba5f1eb965.webp" alt="" className="w-100" />
-                </Col>
-                <Col lg={3}>
-                    <img src="https://i.linio.com/cms/85216f50-fee3-11ec-8489-56ba5f1eb965.webp" alt="" className="w-100" />
-                </Col>
-            </Row>
-        </Container>
-    );
+
+export const OficialTiendas = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          initialSlide: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 760,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
+  return (
+    <Container>
+      <Row className="mt-5">
+        <h3 className="mb-4">TIENDAS OFICIALES </h3>
+      </Row>
+      <Row>
+        <div>
+          <Slider {...settings} className="d-flex justify-content-center borderTiendas">
+            <div>
+              <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/2c24dd9106767__289x388px_xiaomi1.jpg"></img>
+            </div>
+            <div>
+              <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/44e8dee7c628__desktop_sis1_lenovo.jpg"></img>
+            </div>
+            <div>
+              <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/28f63d65c01a1__desktop_sis1_adidas.jpg"></img>
+            </div>
+            <div>
+              <img src="https://dynamic-yield.linio.com//api/scripts/8767678/images/3d98bda18054__on_sists_lapasus_pe.jpg"></img>
+            </div>
+            <div>
+              <img src="https://i.linio.com/cms/ace06972-0133-11ed-8d9e-56ba5f1eb965.webp"></img>
+            </div>
+            <div>
+              <img src="https://i.linio.com/cms/621f225a-fef1-11ec-8ce6-c2533916a67f.webp"></img>
+            </div>
+            <div>
+              <img src="https://i.linio.com/cms/ddc6d114-fef1-11ec-b38a-c2533916a67f.webp"></img>
+            </div>
+            <div>
+              <img src="https://i.linio.com/cms/52c3e9e6-b22d-11ec-9861-96196405f863.webp"></img>
+            </div>
+          </Slider>
+        </div>       
+      </Row>
+      <Row className="my-5">
+        <h3 className="mb-3">¡NO LO PIENSES MÁS!</h3>
+        <Col lg={2} md={4} xs={6} className="mb-2">
+          <img
+            src="https://dynamic-yield.linio.com//api/scripts/8767678/images/2f2143fcd995f__bt_app_laptops_generico_semana_app.jpg"
+            alt=""
+            className="w-100"            
+          />
+        </Col>
+        <Col lg={2} md={4} xs={6} className="mb-2">
+          <img
+            src="https://dynamic-yield.linio.com//api/scripts/8767678/images/260a03eaf0368__375x375px_consolas1.jpg"
+            alt=""
+            className="w-100"           
+          />
+        </Col>
+        <Col lg={2} md={4} xs={6} className="mb-2">
+          <img
+            src="https://dynamic-yield.linio.com//api/scripts/8767678/images/bc9b5fc91b6f__375x375px_videojuegos.jpg"
+            alt=""
+            className="w-100"
+          />
+        </Col>
+        <Col lg={2} md={4} xs={6} className="mb-2">
+          <img
+            src="https://dynamic-yield.linio.com//api/scripts/8767678/images/321f341e101d3__375x375px_sillas.jpg"
+            alt=""
+            className="w-100"
+          />
+        </Col>
+        <Col lg={2} md={4} xs={6} className="mb-2">
+          <img
+            src="https://dynamic-yield.linio.com//api/scripts/8767678/images/28744030009ba__375x375px_monitores.jpg"
+            alt=""
+            className="w-100"
+          />
+        </Col>
+        <Col lg={2} md={4} xs={6} className="mb-2">
+          <img
+            src="https://dynamic-yield.linio.com//api/scripts/8767678/images/25805a030953e__375x375px_accesorios.jpg"
+            alt=""
+            className="w-100"
+          />
+        </Col>
+      </Row>
+    </Container>
+  );
 };
