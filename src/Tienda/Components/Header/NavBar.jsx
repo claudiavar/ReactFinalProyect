@@ -159,7 +159,7 @@ export const NavBar = () => {
                         >
                           <span className="d-flex justify-content-center w-25">
                             {/* iconos */}
-                            <i class="fa fa-amazon" aria-hidden="true"></i>
+                            <i class="fa fa-mobile" aria-hidden="true"></i>
                           </span>
                           {/* nombre categoria */}
                           {data.category}
