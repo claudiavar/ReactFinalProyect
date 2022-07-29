@@ -1,5 +1,5 @@
 import Accordion from "react-bootstrap/Accordion";
-import ImageGallaryComponent from "../Home/CardSlide";
+import ImageGallaryComponent from "../Home/ImageGallaryComponent";
 import { Row, Col, Container, Table, ProgressBar } from "react-bootstrap";
 import { CarrouselCategori } from "../Home/CarrouselCategori";
 

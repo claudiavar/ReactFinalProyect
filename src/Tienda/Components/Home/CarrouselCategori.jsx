@@ -7,7 +7,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 import React, { Component } from "react";
-import ImageGallaryComponent from "./CardSlide"
+import ImageGallaryComponent from "./ImageGallaryComponent"
 
 export const CarrouselCategori = () => {
   const [show, setShow] = useState(false);

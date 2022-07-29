@@ -5,7 +5,7 @@ export const Categoryfilters=()=>{
     return(
         <>
             <Col lg={3}>
-                <h4>Desktop</h4>
+                <h4>Categorías</h4>
                 <ListGroup variant="flush bg-white">
                     <ListGroup.Item className='cursor-pointer'>Celulares y Smartphone</ListGroup.Item>
                     <ListGroup.Item className='cursor-pointer'>Tablets</ListGroup.Item>

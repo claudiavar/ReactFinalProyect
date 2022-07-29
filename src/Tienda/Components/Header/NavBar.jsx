@@ -6,15 +6,14 @@ import { SubCategoryMovil } from "./SubCategoryMovil";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Logo from "./img/TeletubiesStore.jpg";
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { useState } from "react";
 import { category } from "../../helpers/CategoryApi";
 
 export const NavBar = () => {
   category();
 
-  let storage = JSON.parse(localStorage.getItem("logeado"))
-
+  let storage = JSON.parse(localStorage.getItem("logeado"));
 
   const [scroling, setScroling] = useState(true);
   const Data = apifecth();
@@ -30,10 +29,10 @@ export const NavBar = () => {
   };
 
   const CerrarSesion = () => {
-    localStorage.removeItem("logeado")
+    localStorage.removeItem("logeado");
     window.location.href = window.location.href;
-    window.location.replace('/');
-  }
+    window.location.replace("/");
+  };
 
   return (
     <>
@@ -47,17 +46,18 @@ export const NavBar = () => {
             {/* logo */}
             <a href="/" className="fs-2">
               <img src={Logo} title="Linio" alt="logo" className="logo-nav" />
-            </a>            
+            </a>
             {/* barra categorias */}
             <div className=" d-flex flex-column align-items-center justify-content-center  order-md-first order-last px-4 h-100  text-white  ">
               <Navbar.Toggle
                 onClick={scroll}
-                aria-controls="responsive-navbar-nav" style={{background:"#81E291"}}
+                aria-controls="responsive-navbar-nav"
+                style={{ background: "#81E291" }}
                 bg-dark
               />
 
               <span className="text-sm hidden md:block">Menu</span>
-            </div>            
+            </div>
             {/* buscador */}
             <div className="input-group w-50 d-none d-md-flex ">
               <input
@@ -66,7 +66,7 @@ export const NavBar = () => {
                 placeholder="¿Que estas buscando?"
                 autoFocus
                 maxLength="true"
-                style={{widht:"100px"}}
+                style={{ widht: "100px" }}
               />
               <button className="btn btn-light btn-search">
                 <svg
@@ -101,31 +101,56 @@ export const NavBar = () => {
             </div>
             {/* user */}
             <div className="mx-6 relative text-white  d-none d-md-block ">
-              <NavDropdown title={
-                (storage === null || storage === []) ? <i class="fa fa-user-circle fa-2x" aria-hidden="false" ></i>  
-                  : <div className="d-flex align-items-center justify-content-center"><h5 className="mx-1">{storage.displayName.split(" ", [1])}</h5><img src={storage.photoURL} alt="" class="rounded-circle mx-1" width={50} /></div>
-              }>
-                {
-                  (storage == null) ? <>
-                    <NavDropdown.Item><Link to="/Login">Login</Link></NavDropdown.Item>
+              <NavDropdown className="dropFlecha"
+                title={
+                  storage === null || storage === [] ? (
+                    <i class="fa fa-user-circle fa-2x" aria-hidden="false"></i>
+                  ) : (
+                    <div className="d-flex align-items-center justify-content-center">
+                      <h5 className="mx-1">
+                        {storage.displayName.split(" ", [1])}
+                      </h5>
+                      <img
+                        src={storage.photoURL}
+                        alt=""
+                        class="rounded-circle mx-1"
+                        width={50}
+                      />
+                    </div>
+                  )
+                }
+              >
+                {storage == null ? (
+                  <>
+                    <NavDropdown.Item>
+                      <Link to="/Login">Login</Link>
+                    </NavDropdown.Item>
                     {/* muestra la line horizontal */}
                     <NavDropdown.Divider />
                     <NavDropdown.Item>
                       <Link to="/Register">Register</Link>
                     </NavDropdown.Item>
                   </>
-                    :
-                    <>
-                      <NavDropdown.Item><Link to="/Login">Ver Perfil</Link></NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item><Link to="/Login">Ver Compras</Link></NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item>
-                        <button className="dropdown-item text-primary padding-margin" onClick={CerrarSesion}>Cerrar Sesion</button>
-                      </NavDropdown.Item>
-                    </>
-                }
-
+                ) : (
+                  <>
+                    <NavDropdown.Item>
+                      <Link to="/Login">Ver Perfil</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item>
+                      <Link to="/Login">Ver Compras</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item>
+                      <button
+                        className="dropdown-item text-primary padding-margin"
+                        onClick={CerrarSesion}
+                      >
+                        Cerrar Sesion
+                      </button>
+                    </NavDropdown.Item>
+                  </>
+                )}
               </NavDropdown>
             </div>
 
