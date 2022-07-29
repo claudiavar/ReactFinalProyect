@@ -48,15 +48,13 @@ export const NavBar = () => {
               <img src={Logo} title="Linio" alt="logo" className="logo-nav" />
             </a>
             {/* barra categorias */}
-            <div className=" d-flex flex-column align-items-center justify-content-center  order-md-first order-last px-4 h-100  text-white  ">
+            <div className=" d-flex flex-column align-items-center justify-content-center order-md-first order-last px-4 h-100 ">
               <Navbar.Toggle
                 onClick={scroll}
                 aria-controls="responsive-navbar-nav"
-                style={{ background: "#81E291" }}
+                style={{ background: "#81E291", color:"white" }}
                 bg-dark
-              />
-
-              <span className="text-sm hidden md:block">Menu</span>
+              />              
             </div>
             {/* buscador */}
             <div className="input-group w-50 d-none d-md-flex ">
@@ -101,7 +99,7 @@ export const NavBar = () => {
             </div>
             {/* user */}
             <div className="mx-6 relative text-white  d-none d-md-block ">
-              <NavDropdown className="dropFlecha"
+              <NavDropdown
                 title={
                   storage === null || storage === [] ? (
                     <i class="fa fa-user-circle fa-2x" aria-hidden="false"></i>
